@@ -1,5 +1,5 @@
 {
-  "name": "@techly/mantine-rjsf-builder",
+  "name": "mantine-rjsf-builder",
   "version": "0.1.2",
   "description": "Mantine-native visual form builder that outputs JSON Schema + RJSF UI Schema",
   "type": "module",
