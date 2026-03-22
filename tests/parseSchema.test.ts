@@ -119,11 +119,7 @@ describe("parseSchema", () => {
 		];
 
 		const schema = buildSchema(originalFields, config);
-		const parsed = parseSchema(
-			schema.jsonSchema,
-			schema.uiSchema,
-			config,
-		);
+		const parsed = parseSchema(schema.jsonSchema, schema.uiSchema, config);
 
 		expect(parsed).toHaveLength(2);
 		expect(parsed[0].name).toBe("incident_date");

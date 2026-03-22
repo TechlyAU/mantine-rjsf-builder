@@ -171,14 +171,10 @@ export function SchemaBuilder({
 							<Accordion.Panel>
 								<FieldEditor
 									field={field}
-									onChange={(updates) =>
-										updateField(field.id, updates)
-									}
+									onChange={(updates) => updateField(field.id, updates)}
 									onRemove={() => removeField(field.id)}
 									onMoveUp={
-										idx > 0
-											? () => moveField(field.id, "up")
-											: undefined
+										idx > 0 ? () => moveField(field.id, "up") : undefined
 									}
 									onMoveDown={
 										idx < fields.length - 1

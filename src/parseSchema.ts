@@ -35,9 +35,7 @@ function inferFieldType(
 	config?: SchemaBuilderConfig,
 ): FieldType {
 	if (config?.widgetMapping) {
-		for (const [fieldType, widget] of Object.entries(
-			config.widgetMapping,
-		)) {
+		for (const [fieldType, widget] of Object.entries(config.widgetMapping)) {
 			if (widget && uiWidget === widget) {
 				return fieldType as FieldType;
 			}
@@ -158,18 +156,11 @@ export function parseSchema(
 			defaultNow: schema["x-default-now"] === true,
 			longText:
 				uiWidget === "textarea" ||
-				(schema.maxLength !== undefined &&
-					(schema.maxLength as number) > 1000),
+				(schema.maxLength !== undefined && (schema.maxLength as number) > 1000),
 			hidden: uiWidget === "hidden",
 		};
 
-		const conditions = parseConditions(
-			allOf,
-			name,
-			ui,
-			config,
-			idCounter,
-		);
+		const conditions = parseConditions(allOf, name, ui, config, idCounter);
 		if (conditions.length > 0) {
 			field.conditions = conditions;
 		}

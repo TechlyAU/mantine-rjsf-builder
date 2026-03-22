@@ -218,10 +218,7 @@ function buildConditions(
 				childField.name,
 				config.fieldNameFormat,
 			);
-			conditionalProperties[childName] = buildFieldSchema(
-				childField,
-				config,
-			);
+			conditionalProperties[childName] = buildFieldSchema(childField, config);
 
 			const childUi = buildFieldUiSchema(childField, config);
 			if (Object.keys(childUi).length > 0) {
@@ -253,6 +250,7 @@ function buildConditions(
 			thenClause.required = conditionalRequired;
 		}
 
+		// biome-ignore lint/suspicious/noThenProperty: JSON Schema if/then is the correct structure
 		return { if: ifClause, then: thenClause };
 	});
 }

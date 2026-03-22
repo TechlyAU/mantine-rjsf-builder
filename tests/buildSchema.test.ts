@@ -238,9 +238,7 @@ describe("buildSchema", () => {
 			expect(jsonSchema.$schema).toBe(
 				"https://json-schema.org/draft/2020-12/schema",
 			);
-			expect(jsonSchema.$id).toBe(
-				"https://example.com/schemas/form.json",
-			);
+			expect(jsonSchema.$id).toBe("https://example.com/schemas/form.json");
 
 			const props = jsonSchema.properties as Record<
 				string,

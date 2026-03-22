@@ -66,9 +66,7 @@ export function FieldEditor({
 }: FieldEditorProps) {
 	const showOptions = field.type === "select" || field.type === "multiselect";
 	const showDefaultNow =
-		field.type === "datetime" ||
-		field.type === "date" ||
-		field.type === "time";
+		field.type === "datetime" || field.type === "date" || field.type === "time";
 
 	return (
 		<Stack gap="sm">
@@ -99,26 +97,20 @@ export function FieldEditor({
 				<Switch
 					label="Required"
 					checked={field.required}
-					onChange={(e) =>
-						onChange({ required: e.currentTarget.checked })
-					}
+					onChange={(e) => onChange({ required: e.currentTarget.checked })}
 				/>
 				{field.type === "string" && (
 					<Switch
 						label="Long text"
 						checked={field.longText ?? false}
-						onChange={(e) =>
-							onChange({ longText: e.currentTarget.checked })
-						}
+						onChange={(e) => onChange({ longText: e.currentTarget.checked })}
 					/>
 				)}
 				{showDefaultNow && (
 					<Switch
 						label="Default to now"
 						checked={field.defaultNow ?? false}
-						onChange={(e) =>
-							onChange({ defaultNow: e.currentTarget.checked })
-						}
+						onChange={(e) => onChange({ defaultNow: e.currentTarget.checked })}
 					/>
 				)}
 			</Group>
@@ -133,20 +125,12 @@ export function FieldEditor({
 			<Group justify="space-between">
 				<Group gap="xs">
 					{onMoveUp && (
-						<ActionIcon
-							size="sm"
-							variant="subtle"
-							onClick={onMoveUp}
-						>
+						<ActionIcon size="sm" variant="subtle" onClick={onMoveUp}>
 							<ArrowUp size={14} />
 						</ActionIcon>
 					)}
 					{onMoveDown && (
-						<ActionIcon
-							size="sm"
-							variant="subtle"
-							onClick={onMoveDown}
-						>
+						<ActionIcon size="sm" variant="subtle" onClick={onMoveDown}>
 							<ArrowDown size={14} />
 						</ActionIcon>
 					)}

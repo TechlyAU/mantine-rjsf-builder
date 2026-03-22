@@ -43,7 +43,8 @@ export function SelectOptionsEditor({
 	return (
 		<Stack gap="xs">
 			{options.map((opt, idx) => (
-				<Group key={`option-${idx}`} gap="xs">
+				// biome-ignore lint/suspicious/noArrayIndexKey: options have no stable ID
+				<Group key={idx} gap="xs">
 					<TextInput
 						placeholder="Value"
 						size="xs"
