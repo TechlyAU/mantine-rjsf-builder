@@ -1,0 +1,63 @@
+{
+  "name": "mantine-rjsf-builder",
+  "version": "0.1.0",
+  "description": "Mantine-native visual form builder that outputs JSON Schema + RJSF UI Schema",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check src tests",
+    "format": "biome format --write src tests",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "@mantine/core": ">=7",
+    "@mantine/hooks": ">=7",
+    "@rjsf/core": ">=6",
+    "@rjsf/mantine": ">=6",
+    "@rjsf/utils": ">=6",
+    "@rjsf/validator-ajv8": ">=6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@mantine/core": "^7.0.0",
+    "@mantine/hooks": "^7.0.0",
+    "@rjsf/core": "^6.0.0",
+    "@rjsf/mantine": "^6.0.0",
+    "@rjsf/utils": "^6.0.0",
+    "@rjsf/validator-ajv8": "^6.0.0",
+    "@types/react": "^19.0.0",
+    "lucide-react": "^0.577.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TechlyAU/mantine-rjsf-builder"
+  },
+  "keywords": [
+    "mantine",
+    "rjsf",
+    "json-schema",
+    "form-builder",
+    "react",
+    "ui-schema"
+  ]
+}

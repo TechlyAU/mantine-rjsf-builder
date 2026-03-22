@@ -1,0 +1,30 @@
+[tools]
+node = "22"
+bun = "latest"
+
+[env]
+NODE_ENV = "development"
+
+[tasks.lint]
+description = "Run linter"
+run = "bun run lint"
+
+[tasks.format]
+description = "Run formatter"
+run = "bun run format"
+
+[tasks.typecheck]
+description = "Run TypeScript type checking"
+run = "bun run typecheck"
+
+[tasks.test]
+description = "Run tests"
+run = "bun run test"
+
+[tasks.build]
+description = "Build the package"
+run = "bun run build"
+
+[tasks.dev]
+description = "Watch mode for development"
+run = "bun run dev"
